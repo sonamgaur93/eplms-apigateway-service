@@ -1,0 +1,25 @@
+server:
+  port: 8085
+
+eureka:
+  instance:
+    hostname: localhost
+
+spring:
+  application:
+    name: eplms-apigateway-service
+  main:
+    web-application-type: reactive
+
+  cloud:
+    gateway:
+      routes:
+        id: eplms-master-service
+        uri: lb://eplms-master-service
+        predicates:
+          - Path=/devices/**
+          - Path=/departments/**
+          - Path=/device-type/**
+
+   
+  
