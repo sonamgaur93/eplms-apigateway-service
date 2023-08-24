@@ -15,7 +15,68 @@ spring:
           uri: lb://eplms-master-service  
           predicates:
             - Path=/devices/**
+
         - id: eplms-master-service
           uri: lb://eplms-master-service
           predicates:
             - Path=/departments/**
+
+        - id: eplms-master-service
+          uri: lb://eplms-master-service  
+          predicates:
+            - Path=/device-type/**
+
+        - id: eplms-master-service
+          uri: lb://eplms-master-service  
+          predicates:
+            - Path=/common-shifts/**
+
+        - id: eplms-master-service
+          uri: lb://eplms-master-service  
+          predicates:
+            - Path=/common-constants/**
+
+        - id: eplms-master-service
+          uri: lb://eplms-master-service  
+          predicates:
+            - Path=/clusters/**
+            
+        - id: eplms-master-service
+          uri: lb://eplms-master-service  
+          predicates:
+            - Path=/companies/**
+            
+        - id: eplms-master-service
+          uri: lb://eplms-master-service  
+          predicates:
+            - Path=/driver-masters/**
+            
+        - id: eplms-master-service
+          uri: lb://eplms-master-service  
+          predicates:
+            - Path=/interfaces/**
+            
+        - id: eplms-master-service
+          uri: lb://eplms-master-service  
+          predicates:
+            - Path=/main-menu/**
+               
+        - id: eplms-master-service
+          uri: lb://eplms-master-service  
+          predicates:
+            - Path=/materials/**
+            
+        - id: eplms-master-service
+          uri: lb://eplms-master-service  
+          predicates:
+            - Path=/material-types/**
+
+        - id: eplms-master-service
+          uri: lb://eplms-master-service  
+          predicates:
+            - Path=/commonuom/**
+            
+        - id: eplms-master-service
+          uri: lb://eplms-master-service  
+          predicates:
+            - Path=/customers/**
