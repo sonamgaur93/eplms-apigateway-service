@@ -6,77 +6,113 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
 
 spring:
-  application:
-    name: eplms-apigateway-service
   cloud:
     gateway:
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+              allowedOrigins: "*"
+              allowedMethods: "*"
+              allowedHeaders: "*"
       routes:
-        - id: eplms-master-service
+        - id: eplms-master-service-devices
           uri: lb://eplms-master-service  
           predicates:
             - Path=/devices/**
 
-        - id: eplms-master-service
+        - id: eplms-master-service-departments
           uri: lb://eplms-master-service
           predicates:
             - Path=/departments/**
 
-        - id: eplms-master-service
+        - id: eplms-master-service-device-type
           uri: lb://eplms-master-service  
           predicates:
             - Path=/device-type/**
 
-        - id: eplms-master-service
+        - id: eplms-master-service-common-shifts
           uri: lb://eplms-master-service  
           predicates:
             - Path=/common-shifts/**
 
-        - id: eplms-master-service
+        - id: eplms-master-service-common-constants
           uri: lb://eplms-master-service  
           predicates:
             - Path=/common-constants/**
 
-        - id: eplms-master-service
+        - id: eplms-master-service-clusters
           uri: lb://eplms-master-service  
           predicates:
             - Path=/clusters/**
             
-        - id: eplms-master-service
+        - id: eplms-master-service-companies
           uri: lb://eplms-master-service  
           predicates:
             - Path=/companies/**
             
-        - id: eplms-master-service
+        - id: eplms-master-service-driver-masters
           uri: lb://eplms-master-service  
           predicates:
             - Path=/driver-masters/**
             
-        - id: eplms-master-service
+        - id: eplms-master-service-interfaces
           uri: lb://eplms-master-service  
           predicates:
             - Path=/interfaces/**
             
-        - id: eplms-master-service
+        - id: eplms-master-service-main-menu
           uri: lb://eplms-master-service  
           predicates:
             - Path=/main-menu/**
                
-        - id: eplms-master-service
+        - id: eplms-master-service-materials
           uri: lb://eplms-master-service  
           predicates:
             - Path=/materials/**
             
-        - id: eplms-master-service
+        - id: eplms-master-service-material-types
           uri: lb://eplms-master-service  
           predicates:
             - Path=/material-types/**
 
-        - id: eplms-master-service
+        - id: eplms-master-service-common-uom
           uri: lb://eplms-master-service  
           predicates:
             - Path=/commonuom/**
             
-        - id: eplms-master-service
+        - id: eplms-master-service-customers
           uri: lb://eplms-master-service  
           predicates:
             - Path=/customers/**
+            
+        - id: eplms-sap-service-delivery
+          uri: lb://eplms-sap-service  
+          predicates:
+            - Path=/delivery/**
+            
+        - id: eplms-sap-service-driver
+          uri: lb://eplms-sap-service  
+          predicates:
+            - Path=/driver/**
+
+        - id: eplms-sap-service-entryNumGen
+          uri: lb://eplms-sap-service  
+          predicates:
+            - Path=/entryNumGen/**
+            
+        - id: eplms-sap-service-salesOrder
+          uri: lb://eplms-sap-service  
+          predicates:
+            - Path=/salesOrder/**
+            
+        - id: eplms-sap-service-vehicleMaster
+          uri: lb://eplms-sap-service  
+          predicates:
+            - Path=/vehicleMaster/**
+            
+        - id: eplms-sap-service-stageDetails
+          uri: lb://eplms-sap-service  
+          predicates:
+            - Path=/stageDetails/**
