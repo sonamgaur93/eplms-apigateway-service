@@ -87,6 +87,36 @@ spring:
           predicates:
             - Path=/customers/**
             
+        - id: eplms-master-service-movements
+          uri: lb://eplms-master-service  
+          predicates:
+            - Path=/movements/**
+            
+        - id: eplms-master-service-roles
+          uri: lb://eplms-master-service  
+          predicates:
+            - Path=/roles/**
+            
+        - id: eplms-master-service-stages
+          uri: lb://eplms-master-service  
+          predicates:
+            - Path=/stages/**
+            
+        - id: eplms-master-service-submenus
+          uri: lb://eplms-master-service  
+          predicates:
+            - Path=/submenus/**
+            
+        - id: eplms-master-service-vehicle-tag-mappings
+          uri: lb://eplms-master-service  
+          predicates:
+            - Path=/vehicle-tag-mappings/**
+            
+        - id: eplms-master-service-vehicles
+          uri: lb://eplms-master-service  
+          predicates:
+            - Path=/vehicles/**
+            
         - id: eplms-sap-service-delivery
           uri: lb://eplms-sap-service  
           predicates:
@@ -116,3 +146,26 @@ spring:
           uri: lb://eplms-sap-service  
           predicates:
             - Path=/stageDetails/**
+            
+        - id: eplms-sap-service-outbound-trip-details
+          uri: lb://eplms-sap-service  
+          predicates:
+            - Path=/outbound-trip-details/**
+            
+        - id: eplms-sap-service-outbound-vehicle-master
+          uri: lb://eplms-sap-service  
+          predicates:
+            - Path=/outbound-vehicle-master/**
+            
+        - id: eplms-sap-service-consignmentDetails
+          uri: lb://eplms-sap-service  
+          predicates:
+            - Path=/consignmentDetails/**
+            
+        - id: eplms-sap-service-purchase-order
+          uri: lb://eplms-sap-service  
+          predicates:
+            - Path=/purchase-order/**     
+            
+            
+            
