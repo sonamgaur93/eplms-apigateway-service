@@ -117,6 +117,36 @@ spring:
           predicates:
             - Path=/vehicles/**
             
+        - id: eplms-master-service-plants
+          uri: lb://eplms-master-service  
+          predicates:
+            - Path=/plants/**  
+            
+        - id: eplms-master-service-plant-stage-locations
+          uri: lb://eplms-master-service  
+          predicates:
+            - Path=/plant-stage-locations/**  
+        
+        - id: eplms-master-service-states
+          uri: lb://eplms-master-service  
+          predicates:
+            - Path=/states/**      
+         
+        - id: eplms-master-service-user-mappings
+          uri: lb://eplms-master-service  
+          predicates:
+            - Path=/user-mappings/**     
+            
+        - id: eplms-master-service-user-master
+          uri: lb://eplms-master-service  
+          predicates:
+            - Path=/user-master/**     
+            
+        - id: eplms-master-service-documents
+          uri: lb://eplms-master-service  
+          predicates:
+            - Path=/documents/**           
+            
         - id: eplms-sap-service-delivery
           uri: lb://eplms-sap-service  
           predicates:
